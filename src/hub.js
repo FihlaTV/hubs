@@ -556,7 +556,6 @@ function handleHubChannelJoined(entryManager, hubChannel, messageDispatch, data)
     while (!scene.components["networked-scene"] || !scene.components["networked-scene"].data) await nextTick();
 
     scene.addEventListener("adapter-ready", ({ detail: adapter }) => {
-      // We don't need to update the server URL when reconnecting, it's always updated every time we join a room
       adapter.setReconnectionListeners(
         () => {
           console.log("Reconnecting...");
